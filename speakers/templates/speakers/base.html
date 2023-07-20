@@ -1,0 +1,84 @@
+<!-- events/event_detail.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event | {%block title%} {% endblock%}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Add your professional styling here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .speaker {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .speaker-details {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .profile-picture {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .Profile_picture_img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+    </style>
+        <nav class="bg-blue-500  p-5">
+            <div class="container mx-auto">
+              <div class="flex items-center justify-between">
+                <!-- Brand/logo -->
+                <a class="text-white text-xl font-semibold" href="#">Event List</a>
+                
+                <!-- Mobile menu button -->
+                <button class="lg:hidden px-2 py-1 rounded-md bg-blue-700 text-white focus:outline-none">
+                  <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                  </svg>
+                </button>
+                
+                <!-- Desktop menu items -->
+                <div class="hidden lg:flex space-x-4">
+    
+                  <a class="text-white" href="#">About</a>
+                  <a class="text-white" href="{% url 'event_list' %}">Event</a>
+                  <a class="text-white" href="#">Services</a>
+                  <a class="text-white" href="#">Contact</a>
+    
+                </div>
+              </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div class="hidden lg:hidden">
+              <div class="bg-blue-700 px-2 pt-2 pb-4 space-y-1">
+                <a class="block text-white" href="#">Home</a>
+                <a class="block text-white" href="#">About</a>
+                <a class="block text-white" href="#">Services</a>
+                <a class="block text-white" href="#">Contact</a>
+              </div>
+            </div>
+          </nav>
+</head>
+<body>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends 'speakers/base.html'%}
+
+{%block title%}Speaker List{% endblock%}
+
+
+{% block content %}
+
+
+
+  <br/>
+
+  {% for speaker in speakers %}
+    <div class="speaker">
+      <div class="profile-picture">
+        <img class="Profile_picture_img" src="{{speaker.photo.url}}" alt="Profile_picture">
+      </div>
+      <h2>{{ speaker.name }}</h2>
+      <p><strong>Biography:</strong> {{ speaker.biography }}</p>
+      <p><strong>Email:</strong> {{ speaker.email }} <br>
+      <label><a class="More" href="{% url 'speaker_details' speaker.name %}">More</a></p></label>
+    </div>
+  {% endfor %}
+
+{% endblock %}

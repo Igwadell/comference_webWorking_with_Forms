@@ -1,0 +1,20 @@
+<!-- speakers/templates/speakers/speaker_details.html -->
+
+
+{% extends 'speakers/base.html'%}
+
+{%block title%}Speaker Details{% endblock%}
+
+{% block content %}
+    <div class="speaker-details">
+
+        <div class="profile-picture">
+            <img class="Profile_picture_img" src="{{speaker.photo.url}}" alt="Profile_picture">
+        </div>
+
+        <h1>{{ speaker.name }}</h1>
+        <p>Email: {{ speaker.email }}</p>
+        <p>Biography: {{ speaker.biography }}</p>
+        <a href="{% url 'speaker_list' %}" class="details-link">Back</a>
+    </div>
+{% endblock %}
